@@ -11,8 +11,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.ouputEnconding>UTF-8</project.reporting.ouputEnconding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <junit.version>4.13</junit.version>
         <selenium.version>3.141.59</selenium.version>
     </properties>
@@ -32,6 +32,12 @@
     </dependencies>
 
     <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -52,5 +58,67 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>baseProp</id>
+            <activation><activeByDefault>true</activeByDefault></activation>
+            <properties>
+                <baseUrl>http://localhost/litecart</baseUrl>
+                <login>admin</login>
+                <password>admin</password>
+                <initializationMethod>new</initializationMethod>
+            </properties>
+        </profile>
+        <profile>
+            <id>ch</id>
+            <activation><activeByDefault>true</activeByDefault></activation>
+            <properties>
+                <browser>Chrome</browser>
+            </properties>
+        </profile>
+        <profile>
+            <id>en</id>
+            <activation><activeByDefault>true</activeByDefault></activation>
+            <properties>
+                <lang>en</lang>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>ru</id>
+            <properties>
+                <lang>en</lang>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>ffNew</id>
+            <properties>
+                <browser>Firefox</browser>
+                <initializationMethod>new</initializationMethod>
+            </properties>
+        </profile>
+        <profile>
+            <id>ffOld</id>
+            <properties>
+                <browser>Firefox</browser>
+                <initializationMethod>old</initializationMethod>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>ie</id>
+            <properties>
+                <browser>Internet Explorer</browser>
+            </properties>
+        </profile>
+        <profile>
+            <id>edge</id>
+            <properties>
+                <browser>Edge</browser>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
