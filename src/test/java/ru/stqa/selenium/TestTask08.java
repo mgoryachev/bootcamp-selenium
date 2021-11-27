@@ -11,11 +11,11 @@ public class TestTask08 extends BaseTest {
     @Test
     public void checkSticker(){
         openSite();
-        By locatorWraper = By.cssSelector("div.image-wrapper");
+        By locatorProduct = By.cssSelector(".product");
         By locatorSticker = By.cssSelector(".sticker");
-        int numberWrapperProduct = driver.findElements(locatorWraper).size();
-        for (int i = 0; i < numberWrapperProduct; i++){
-            WebElement wrapperProduct = driver.findElements(locatorWraper).get(i);
+        int numberProduct = driver.findElements(locatorProduct).size();
+        for (int i = 0; i < numberProduct; i++){
+            WebElement wrapperProduct = driver.findElements(locatorProduct).get(i);
             assertTrue(wrapperProduct.findElements(locatorSticker).size() == 1);
         }
     }
