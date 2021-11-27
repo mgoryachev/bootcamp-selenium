@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68d2ba1f-5a36-4388-b3fb-ff058280e3ad" name="Default Changelist" comment="Задание 7&#10;Класс для проверки TestTask07">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestTask07.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/test.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="68d2ba1f-5a36-4388-b3fb-ff058280e3ad" name="Default Changelist" comment="Класс для проверки TestTask08">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestTask08.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootcamp-selenium.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestLitecart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestLitecart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestSeleniumFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestSeleniumFirst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestTask07.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestTask07.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +77,7 @@
       <command value="mvn test -P edge" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestTask07">
+  <component name="RunManager" selected="JUnit.TestTask08">
     <configuration name="TestSeleniumFirst" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bootcamp-selenium" />
       <extension name="coverage">
@@ -146,6 +140,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestTask08" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bootcamp-selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.selenium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.selenium" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.selenium.TestTask08" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,8 +168,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestTask07" />
+        <item itemvalue="JUnit.TestTask08" />
         <item itemvalue="JUnit.TestTask07.testAdminMenu" />
+        <item itemvalue="JUnit.TestTask07" />
         <item itemvalue="JUnit.TestSeleniumFirst" />
         <item itemvalue="JUnit.TestSeleniumFirst.myFirstTestSelenium" />
       </list>
@@ -177,6 +187,17 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -187,10 +208,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Задание 7&#10;Класс для проверки TestTask07" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задание 7&#10;Класс для проверки TestTask07" />
+    <MESSAGE value="Класс для проверки TestTask08" />
+    <MESSAGE value="Задание 8&#10;&#10;Класс для проверки TestTask08" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задание 8&#10;&#10;Класс для проверки TestTask08" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -201,5 +225,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="listItem" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

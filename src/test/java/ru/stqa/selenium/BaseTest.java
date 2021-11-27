@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.HasCapabilities;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -52,9 +53,17 @@ public class BaseTest {
     public boolean isElementPresent (By locator){
         return driver.findElements(locator).size()>0;
     }
+    public boolean isElementPresent (WebElement webElement, By locator){
+        return  webElement.findElements(locator).size()>0;
+    }
 
+    public void openSite(){
+        driver.get(props.getProperty("baseUrl") + "/" + props.getProperty("lang") + "/");
+        wait.until(titleIs("Online Store | My Store"));
+    }
     public void loginAdmin() {
         driver.get(props.getProperty("baseUrl")+"/admin");
+        if (driver.getTitle().equals("My Store")) return;
         driver.findElement(By.name("username")).sendKeys(props.getProperty("login"));
         driver.findElement(By.name("password")).sendKeys(props.getProperty("password"));
         driver.findElement(By.name("login")).click();
