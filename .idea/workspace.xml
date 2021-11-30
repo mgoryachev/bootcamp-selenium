@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68d2ba1f-5a36-4388-b3fb-ff058280e3ad" name="Default Changelist" comment="Класс для проверки TestTask08">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestTask08.java" afterDir="false" />
+    <list default="true" id="68d2ba1f-5a36-4388-b3fb-ff058280e3ad" name="Default Changelist" comment="Задание 8 (2)&#10;&#10;Класс для проверки TestTask08">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestTask09.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestTask07.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/stqa/selenium/TestTask07.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,38 +76,7 @@
       <command value="mvn test -P edge" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestTask08">
-    <configuration name="TestSeleniumFirst" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bootcamp-selenium" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.selenium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.selenium" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.selenium.TestSeleniumFirst" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestSeleniumFirst.myFirstTestSelenium" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bootcamp-selenium" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.selenium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.selenium" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.selenium.TestSeleniumFirst" />
-      <option name="METHOD_NAME" value="myFirstTestSelenium" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestTask09">
     <configuration name="TestTask07" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bootcamp-selenium" />
       <extension name="coverage">
@@ -155,6 +123,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestTask09" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bootcamp-selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.selenium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.selenium" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.selenium.TestTask09" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTask09.sortedCountry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bootcamp-selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.selenium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.selenium" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.selenium.TestTask09" />
+      <option name="METHOD_NAME" value="sortedCountry" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestTask09" />
+        <item itemvalue="JUnit.TestTask09.sortedCountry" />
         <item itemvalue="JUnit.TestTask08" />
         <item itemvalue="JUnit.TestTask07.testAdminMenu" />
         <item itemvalue="JUnit.TestTask07" />
-        <item itemvalue="JUnit.TestSeleniumFirst" />
-        <item itemvalue="JUnit.TestSeleniumFirst.myFirstTestSelenium" />
       </list>
     </recent_temporary>
   </component>
@@ -185,6 +184,21 @@
       <option name="presentableId" value="Default" />
       <updated>1636832397378</updated>
     </task>
+    <task id="LOCAL-00001" summary="Задание 8&#10;&#10;Класс для проверки TestTask08">
+      <created>1638028320150</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638028320151</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Задание 8 (2)&#10;&#10;Класс для проверки TestTask08">
+      <created>1638041568201</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638041568201</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -214,7 +228,8 @@
     <MESSAGE value="Задание 7&#10;Класс для проверки TestTask07" />
     <MESSAGE value="Класс для проверки TestTask08" />
     <MESSAGE value="Задание 8&#10;&#10;Класс для проверки TestTask08" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задание 8&#10;&#10;Класс для проверки TestTask08" />
+    <MESSAGE value="Задание 8 (2)&#10;&#10;Класс для проверки TestTask08" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задание 8 (2)&#10;&#10;Класс для проверки TestTask08" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -222,6 +237,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.IllegalStateException" package="java.lang" />
           <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.AssertionError" package="java.lang" />
+          <option name="timeStamp" value="6" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

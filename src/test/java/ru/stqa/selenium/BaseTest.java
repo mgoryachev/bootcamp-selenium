@@ -63,7 +63,7 @@ public class BaseTest {
     }
     public void loginAdmin() {
         driver.get(props.getProperty("baseUrl")+"/admin");
-        if (driver.getTitle().equals("My Store")) return;
+        if (isElementPresent(By.cssSelector("li#app-"))) return;
         driver.findElement(By.name("username")).sendKeys(props.getProperty("login"));
         driver.findElement(By.name("password")).sendKeys(props.getProperty("password"));
         driver.findElement(By.name("login")).click();
