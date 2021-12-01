@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class TestTask09 extends BaseTest{
 
     @Test
-    public void sortedCountry(){
+    public void isSortedCountry(){
         loginAdmin();
         driver.get(driver.getCurrentUrl() + "/?app=countries&doc=countries");
         wait.until(titleIs("Countries | My Store"));
@@ -49,7 +49,7 @@ public class TestTask09 extends BaseTest{
     }
 
     @Test
-    public void isSortedZones(){
+    public void isSortedGeoZones(){
         By locatorGeoZonesRows = By.cssSelector("[name = geo_zones_form] a[href *= edit_geo_zone]:not([title])");
         By locatorZones = By.cssSelector("select[name*=zone_code]>option[selected]");
 
