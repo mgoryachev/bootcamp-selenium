@@ -24,8 +24,8 @@ public class TestTask07 extends BaseTest{
         int numberMenuItem = driver.findElements(locator).size();
         for (int i = j; i < numberMenuItem; i++) {
             driver.findElements(locator).get(i).click();
-            assertTrue(isElementPresent(By.cssSelector("h1")));
-            System.out.println("Заголовок страницы - " + driver.findElement(By.cssSelector("h1")).getText());
+            assertTrue("Нет заголовка по пути " + driver.getCurrentUrl(), isElementPresent(By.cssSelector("h1")));
+            System.out.println("Заголовок - " + driver.findElement(By.cssSelector("h1")).getText());
             if (isElementPresent(By.cssSelector(str + childCssSelector))) clickItem(str + childCssSelector);
         }
     }
