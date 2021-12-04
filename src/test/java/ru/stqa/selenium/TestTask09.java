@@ -54,7 +54,7 @@ public class TestTask09 extends BaseTest{
         By locatorZones = By.cssSelector("select[name*=zone_code]>option[selected]");
 
         loginAdmin();
-        driver.get(driver.getCurrentUrl() + "/?app=geo_zones&doc=geo_zones");
+        driver.get(driver.getCurrentUrl() + "?app=geo_zones&doc=geo_zones");
         wait.until(titleIs("Geo Zones | My Store"));
 
         List<WebElement> geoZones = driver.findElements(locatorGeoZonesRows);
@@ -65,11 +65,11 @@ public class TestTask09 extends BaseTest{
 
             List<WebElement> zones = driver.findElements(locatorZones);
             ArrayList<String> selectedZones = new ArrayList<>();
-            for (int j = 0; j < zones.size(); j++) selectedZones.add(zones.get(j).getText());
 
+            for (WebElement zone : zones) selectedZones.add(zone.getText());
             assertTrue("Список зон для " + selectedGeoZone + " не отсортирован", Ordering.natural().isOrdered(selectedZones));
 
-            driver.get(driver.getCurrentUrl() + "/?app=geo_zones&doc=geo_zones");
+            driver.get(props.getProperty("baseUrl")  + "/admin/?app=geo_zones&doc=geo_zones");
             wait.until(titleIs("Geo Zones | My Store"));
             geoZones = driver.findElements(locatorGeoZonesRows);
         }
