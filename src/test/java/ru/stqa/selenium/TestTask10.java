@@ -28,12 +28,12 @@ public class TestTask10 extends BaseTest {
 
         nameProductDetailsSheet = driver.findElement(By.cssSelector("[itemprop=name]")).getText();
 
-        assertTrue("Название товаров на главной странице и странице товара не соответствует",
+        assertTrue("Название товаров на главной странице и странице товара не совпадают",
                 nameProductDetailsSheet.equals(nameProductMainSheet));
     }
 
     @Test
-    public void equlsPricies(){
+    public void equalsPricies(){
         String regularPriceMainSheet, regularPriceDetailsSheet;
         String campaignPriceMainSheet, campaignPriceDetailsSheet;
 
@@ -44,9 +44,9 @@ public class TestTask10 extends BaseTest {
         regularPriceDetailsSheet = driver.findElement(By.cssSelector(".information .regular-price")).getText();
         campaignPriceDetailsSheet = driver.findElement(By.cssSelector(".information .campaign-price")).getText();
 
-        assertTrue("Регулярная цена товара на главной странице и странице товара не совпадает",
+        assertTrue("Регулярная цена товара на главной странице и странице товара не совпадают",
                 regularPriceDetailsSheet.equals(regularPriceMainSheet));
-        assertTrue("Акционная цена товара на главной странице и странице товара не совпадает",
+        assertTrue("Акционная цена товара на главной странице и странице товара не совпадают",
                 campaignPriceDetailsSheet.equals(campaignPriceMainSheet));
 
     }

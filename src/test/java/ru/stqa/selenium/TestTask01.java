@@ -7,7 +7,7 @@ import org.openqa.selenium.Keys;
 import static org.junit.Assert.assertTrue;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
-public class TestSeleniumFirst extends BaseTest{
+public class TestTask01 extends BaseTest{
 
     @Test
     public void myFirstTestSelenium(){
