@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 public class TestTask11 extends BaseTest{
 
     @Test
-    public void test(){
+    public void testAccount(){
         String userMail = "test-user-" + genUniquePart() + "@q.a";
         String userPassword = "password";
 
@@ -44,6 +44,8 @@ public class TestTask11 extends BaseTest{
         driver.findElement(By.cssSelector(".select2-results__option[id $=-US]")).click();
 
         driver.findElement(By.cssSelector("select[name=zone_code]")).click();
+
+        wait.until(d -> d.findElement(By.cssSelector("[value=CA]")));
         Select select = new Select(driver.findElement(By.cssSelector("select[name=zone_code]")));
         select.selectByValue("CA");
 
@@ -53,7 +55,7 @@ public class TestTask11 extends BaseTest{
         driver.findElement(By.cssSelector("[name=confirmed_password]")).sendKeys(password);
         driver.findElement(By.cssSelector("[name=create_account]")).click();
 
-        wait.until(d -> driver.findElement(By.cssSelector(".notice")));
+        wait.until(d -> d.findElement(By.cssSelector(".notice")));
         assertTrue("Аккаунт создать не удалось", isElementPresent(By.cssSelector(".notice.success")));
     }
 
@@ -62,7 +64,7 @@ public class TestTask11 extends BaseTest{
         driver.findElement(By.cssSelector("input[name=password]")).sendKeys(password);
         driver.findElement(By.cssSelector("button[name=login]")).click();
 
-        wait.until(d -> driver.findElement(By.cssSelector(".notice")));
+        wait.until(d -> d.findElement(By.cssSelector(".notice")));
         assertTrue("Не удалось войти в аккаунт", isElementPresent(By.cssSelector(".notice.success")));
     }
     
