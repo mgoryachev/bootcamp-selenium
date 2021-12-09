@@ -17,13 +17,17 @@ public class TestTask12 extends BaseTest{
 
     @Test
     public void checkAddProduct(){
-        loginAdmin();
         Path pic = Path.of("src\\test\\resources\\seal.jpg").toAbsolutePath();
         String absolutePathPic = pic.toString();
         String nameProduct = "Чудо-юдо";
+        int numberProducts = 0;
 
+        loginAdmin();
         driver.findElement(By.cssSelector("a[href$='app=catalog&doc=catalog']")).click();
         wait.until(d->d.findElement(By.cssSelector("a[href$='app=catalog&doc=edit_product']")));
+
+        numberProducts =  countProducts(driver.findElements(By.cssSelector("table.dataTable tr.row a:not([title])")), nameProduct);
+
         driver.findElement(By.cssSelector("a[href$='app=catalog&doc=edit_product']")).click();
         driver.findElement(By.cssSelector("input[name=status][value='1']")).click();
 
@@ -55,11 +59,12 @@ public class TestTask12 extends BaseTest{
         wait.until(d -> d.findElement(By.cssSelector("a[href$='app=catalog&doc=edit_product']")));
 
         List<WebElement> linksData = driver.findElements(By.cssSelector("table.dataTable tr.row a:not([title])"));
-        assertTrue("Продукт не добавлен", isProductAdded(linksData, nameProduct));
+        assertTrue("Продукт не добавлен", numberProducts + 1 == countProducts(linksData, nameProduct));
     }
 
-    private boolean isProductAdded (List<WebElement> elements, String value){
-        for (WebElement element:elements) if (value.equals(element.getText())) return true;
-        return false;
+    private int countProducts(List<WebElement> elements, String value){
+        int count = 0;
+        for (WebElement element:elements) if (value.equals(element.getText())) count++;
+        return count;
     }
 }
