@@ -52,7 +52,7 @@ public class TestTask12 extends BaseTest{
         driver.findElement(By.cssSelector("button[name=save][value=Save]")).click();
 
         driver.findElement(By.cssSelector("a[href$='app=catalog&doc=catalog']")).click();
-        wait.until(d->d.findElement(By.cssSelector("a[href$='app=catalog&doc=edit_product']")));
+        wait.until(d -> d.findElement(By.cssSelector("a[href$='app=catalog&doc=edit_product']")));
 
         List<WebElement> linksData = driver.findElements(By.cssSelector("table.dataTable tr.row a:not([title])"));
         assertTrue("Продукт не добавлен", isProductAdded(linksData, nameProduct));
