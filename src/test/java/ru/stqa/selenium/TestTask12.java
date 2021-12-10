@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-
 import java.nio.file.Path;
 import java.util.List;
 
@@ -26,7 +25,8 @@ public class TestTask12 extends BaseTest{
         driver.findElement(By.cssSelector("a[href$='app=catalog&doc=catalog']")).click();
         wait.until(d->d.findElement(By.cssSelector("a[href$='app=catalog&doc=edit_product']")));
 
-        numberProducts =  countProducts(driver.findElements(By.cssSelector("table.dataTable tr.row a:not([title])")), nameProduct);
+        List<WebElement> linksData = driver.findElements(By.cssSelector("table.dataTable tr.row a:not([title])"));
+        numberProducts =  countProducts(linksData, nameProduct);
 
         driver.findElement(By.cssSelector("a[href$='app=catalog&doc=edit_product']")).click();
         driver.findElement(By.cssSelector("input[name=status][value='1']")).click();
@@ -58,7 +58,7 @@ public class TestTask12 extends BaseTest{
         driver.findElement(By.cssSelector("a[href$='app=catalog&doc=catalog']")).click();
         wait.until(d -> d.findElement(By.cssSelector("a[href$='app=catalog&doc=edit_product']")));
 
-        List<WebElement> linksData = driver.findElements(By.cssSelector("table.dataTable tr.row a:not([title])"));
+        linksData = driver.findElements(By.cssSelector("table.dataTable tr.row a:not([title])"));
         assertTrue("Продукт не добавлен", numberProducts + 1 == countProducts(linksData, nameProduct));
     }
 
