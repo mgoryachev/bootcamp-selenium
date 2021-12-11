@@ -11,12 +11,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 import java.util.Properties;
+import java.util.Set;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
@@ -69,5 +69,15 @@ public class BaseTest {
         driver.findElement(By.name("password")).sendKeys(props.getProperty("password"));
         driver.findElement(By.name("login")).click();
         wait.until(titleIs("My Store"));
+    }
+
+    public ExpectedCondition<String> anyWindowOtherThan(Set oldWindows){
+        return new ExpectedCondition<String>(){
+            public String apply(WebDriver driver){
+                Set<String> handles = driver.getWindowHandles();
+                handles.removeAll(oldWindows);
+                return handles.size() > 0 ? handles.iterator().next() : null;
+            }
+        };
     }
 }

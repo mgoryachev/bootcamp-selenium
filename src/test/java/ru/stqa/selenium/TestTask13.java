@@ -17,7 +17,6 @@ public class TestTask13 extends BaseTest{
 
         fillingCart(numberProductInCart);
         clearingCart();
-
     }
 
     public void fillingCart (int numberProduct) {
