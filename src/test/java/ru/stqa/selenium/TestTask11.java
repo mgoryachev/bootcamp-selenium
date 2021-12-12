@@ -2,6 +2,7 @@ package ru.stqa.selenium;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.Date;
@@ -45,7 +46,7 @@ public class TestTask11 extends BaseTest{
 
         driver.findElement(By.cssSelector("select[name=zone_code]")).click();
 
-        wait.until(d -> d.findElement(By.cssSelector("[value=CA]")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[value=CA]")));
         Select select = new Select(driver.findElement(By.cssSelector("select[name=zone_code]")));
         select.selectByValue("CA");
 

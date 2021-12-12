@@ -19,6 +19,7 @@
         <baseUrl>http://localhost/litecart</baseUrl>
         <login>admin</login>
         <password>admin</password>
+        <hub>http://192.168.16.43:4444/wd/hub</hub>
         <lang>en</lang>
     </properties>
 
@@ -74,20 +75,36 @@
 
     <profiles>
         <profile>
+            <id>rm-ch</id>
+            <properties>
+                <browser>rm-ch</browser>
+            </properties>
+        </profile>
+        <profile>
+            <id>rm-ie</id>
+            <properties>
+                <browser>rm-ie</browser>
+            </properties>
+        </profile>
+        <profile>
+            <id>rm-ff</id>
+            <properties>
+                <browser>rm-ff</browser>
+            </properties>
+        </profile>
+        <profile>
+            <id>rm-edge</id>
+            <properties>
+                <browser>rm-edge</browser>
+            </properties>
+        </profile>
+        <profile>
             <id>ch</id>
             <activation><activeByDefault>true</activeByDefault></activation>
             <properties>
                 <browser>Chrome</browser>
             </properties>
         </profile>
-
-        <profile>
-            <id>ru</id>
-            <properties>
-                <lang>en</lang>
-            </properties>
-        </profile>
-
         <profile>
             <id>ffNew</id>
             <properties>

@@ -6,15 +6,22 @@ import org.openqa.selenium.HasCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.Set;
 
@@ -22,29 +29,52 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 public class BaseTest {
 
-    public static WebDriver driver;
+    public static EventFiringWebDriver driver;
     public static WebDriverWait wait;
     public static Properties props;
+
+    public static class MyListener extends AbstractWebDriverEventListener {
+
+    }
 
     @Before
     public void start() throws IOException {
         if (driver != null) return;
         props = new Properties();
         props.load(BaseTest.class.getResourceAsStream("/test.properties"));
-        if (props.getProperty("browser", "Firefox").equals("Firefox")){
-            DesiredCapabilities caps = new DesiredCapabilities();
-            if (props.getProperty("initializationMethod").equals("old")){
-                caps.setCapability(FirefoxDriver.MARIONETTE, false);
-                driver = new FirefoxDriver(caps);
-            }
-            else driver = new FirefoxDriver(new FirefoxOptions().setBinary("C:\\Program Files\\Firefox Nightly\\firefox.exe"));
+
+        switch(props.getProperty("browser")){
+            case "Firefox":
+                DesiredCapabilities caps = new DesiredCapabilities();
+                if (props.getProperty("initializationMethod").equals("old")){
+                    caps.setCapability(FirefoxDriver.MARIONETTE, false);
+                    driver = new EventFiringWebDriver(new FirefoxDriver(caps));
+                }
+                else driver = new EventFiringWebDriver(new FirefoxDriver(new FirefoxOptions()
+                        .setBinary("C:\\Program Files\\Firefox Nightly\\firefox.exe")));
+                break;
+            case "Chrome":
+                driver = new EventFiringWebDriver(new ChromeDriver());
+                break;
+            case "Internet Explorer":
+                driver = new EventFiringWebDriver(new InternetExplorerDriver());
+                break;
+            case "Edge":
+                driver = new EventFiringWebDriver(new EdgeDriver());
+                break;
+            case "rm-ch":
+                driver = new EventFiringWebDriver(new RemoteWebDriver(new URL(props.getProperty("hub")), new ChromeOptions()));
+                break;
+            case "rm-ie":
+                driver = new EventFiringWebDriver(new RemoteWebDriver(new URL(props.getProperty("hub")), new InternetExplorerOptions()));
+                break;
+            case "rm-ff":
+                driver = new EventFiringWebDriver(new RemoteWebDriver(new URL(props.getProperty("hub")), new FirefoxOptions()));
+                break;
+            case "rm-edge":
+                driver = new EventFiringWebDriver(new RemoteWebDriver(new URL(props.getProperty("hub")), new EdgeOptions()));
         }
-        else if (props.getProperty("browser").equals("Chrome"))
-                driver = new ChromeDriver();
-        else if (props.getProperty("browser").equals("Internet Explorer"))
-                driver = new InternetExplorerDriver();
-        else if (props.getProperty("browser").equals("Edge"))
-                driver = new EdgeDriver();
+        driver.register(new MyListener());
         System.out.println(((HasCapabilities) driver).getCapabilities());
         wait = new WebDriverWait(driver, 10);
 
@@ -58,7 +88,7 @@ public class BaseTest {
         return  webElement.findElements(locator).size()>0;
     }
 
-    public void openSite(){
+    public void openSite() {
         driver.get(props.getProperty("baseUrl") + "/" + props.getProperty("lang") + "/");
         wait.until(titleIs("Online Store | My Store"));
     }
