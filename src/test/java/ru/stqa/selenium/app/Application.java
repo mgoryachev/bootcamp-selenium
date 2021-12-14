@@ -82,7 +82,6 @@ public class Application {
     }
 
     public void addToCart(int numberProduct) {
-        mainPage.open();
         int quantity = Integer.parseInt(mainPage.quantityInCart().getText());
         while (quantity < numberProduct) {
             mainPage.openProductPage(mainPage.products().get(0));
@@ -95,11 +94,16 @@ public class Application {
 
     public void clearingCart(){
         int numberRowsProduct;
-        mainPage.openCart();
         numberRowsProduct = cartPage.buttonsRemoveProduct().size();
         while(numberRowsProduct > 0) {
             cartPage.removeProduct(cartPage.buttonsRemoveProduct().get(0));
             numberRowsProduct = driver.findElements(By.cssSelector("td.item")).size();
         }
+    }
+    public void openMainPage() {
+        mainPage.open();
+    }
+    public void openCartMainPage() {
+        mainPage.openCart();
     }
 }

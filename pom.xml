@@ -21,9 +21,20 @@
         <password>admin</password>
         <hub>http://192.168.16.43:4444/wd/hub</hub>
         <lang>en</lang>
+        <cuccmber.version>7.0.0</cuccmber.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java8</artifactId>
+            <version>${cuccmber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cuccmber.version}</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

@@ -23,7 +23,6 @@ public class MainPage extends Page {
     }
 
     public void openCart() {
-        open();
         driver.findElement(By.cssSelector("a.link[href$=checkout")).click();
         wait.until(presenceOfElementLocated(By.cssSelector("[name=confirm_order]")));
     }
